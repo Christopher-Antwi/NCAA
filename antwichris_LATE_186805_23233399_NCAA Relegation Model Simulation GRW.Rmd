@@ -69,7 +69,7 @@ NOT CLEAR WHAT'S GOING ON... SET ALPHA=.5? INTERPRET COLOR FOR THE READER, SO TH
 ## 100 Season Run w/ NO Relegation: Ability Over Time
 
 ```{r plot 3, echo=FALSE}
-g
+
 ```
 
 ```{r plot 4, echo=FALSE}

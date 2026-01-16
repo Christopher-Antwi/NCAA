@@ -1,0 +1,93 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "NCAA Research",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "",
+    "text": "Adopted in July 2025, the NCAA adopted it’s new profit sharing scheme in response to all the issues stemming from the confusion created about player compensation associated with their Name, Image, or Likeness (NIL). In this new profit sharing scheme, it allows institutions to invest up to 20.5 Million into their athletes in the form of direct compensation for their play. Under this new profit sharing scheme, I have taken a look at the way college basketball programs/institutions might behave if a promotion/relegation scheme were to be introduced into the world of college basketball and to further investigate the total effects of this presumed increase in competition. I DON’T THINK THIS IS WHAT YOU’VE DONE… NOT YET, ANYWAY. YOU’D NEED TO INCLUDE OPTIMIZING AGENTS TO HAVE BEHAVIOURAL IMPLICATIONS. RIGHT NOW YOU ARE MODELING THE DYNAMICS WITH AND WITHOUT PROMOTION/REGEGATION, AREN’T YOU? BUT NOT WITH PROFIT SHARING OR OPTIMIZING? With just over 360 Schools in division 1 basketball, there are a total of 31 Conferences that could be included into this new European soccer style league. “THIS” IS CONFUSING, AS YOU’VE NOT SAID ANYTHING ABOUT THIS YET. In this new promotion/relegation scheme, for teams in Tiers 1&2, the bottom 2 teams that finish with the worst records in that conference will be relegated to a conference in the tier directly below it’s current at the end of each season.For Tiers 2&3, the top 2 teams in each conference will be promoted to the tier directly above.This new profit sharing scheme also removes the ban on the number of full athletic scholarships universities are permitted to provide which I hope to investigate in the future. &lt; \nAT THIS POINT IT’S NOT CLEAR TO READERS WHAT THS IS ABOUT. PROFIT SHARING? PROMOTION/REGEGATION?\nThis/IT is important to study competition in this setting to learn more about how competitive outcomes may emerge over time under different settings. Real-world leagues and organizations can evolve through repeated interactions and constraints that would be impossible to discern from simple observations. Essentially, I am searching how do the policy changes and resource shortages shape long-run competitive balance? \nIn this analysis, I will first take a look at \\(E[Competition_i|Relegation_i]\\) by evaluating how ability changes over time. IS IT ABILITY THAT’S OF PRIMARY INTEREST? NOT COMPETITIVENESS?"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-w-no-relegation-wins-over-time",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-w-no-relegation-wins-over-time",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "100 Season Run w/ No Relegation: Wins Over Time",
+    "text": "100 Season Run w/ No Relegation: Wins Over Time"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-with-relegation-wins-over-time",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-with-relegation-wins-over-time",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "100 Season Run WITH Relegation: Wins Over Time",
+    "text": "100 Season Run WITH Relegation: Wins Over Time\nNOT CLEAR WHAT’S GOING ON… SET ALPHA=.5? INTERPRET COLOR FOR THE READER, SO THEY CAN FOLLOW? INTERPRET MOVEMENTS? SUMMARIZE MOVEMENTS?"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-w-no-relegation-ability-over-time",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-w-no-relegation-ability-over-time",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "100 Season Run w/ NO Relegation: Ability Over Time",
+    "text": "100 Season Run w/ NO Relegation: Ability Over Time"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-1-ability-variance",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-1-ability-variance",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier 1 Ability Variance",
+    "text": "Tier 1 Ability Variance"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-2-ability-variance",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-2-ability-variance",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier 2 Ability Variance",
+    "text": "Tier 2 Ability Variance"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-3-ability-variance",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-3-ability-variance",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier 3 Ability Variance",
+    "text": "Tier 3 Ability Variance"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-movement-w-no-relegation",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-movement-w-no-relegation",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier Movement w/ No Relegation",
+    "text": "Tier Movement w/ No Relegation"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-movement-w-relegation",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-movement-w-relegation",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier Movement w/ Relegation",
+    "text": "Tier Movement w/ Relegation"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#cash-simulation-run",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#cash-simulation-run",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Cash Simulation Run",
+    "text": "Cash Simulation Run"
+  },
+  {
+    "objectID": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#cash-dispersion-throughout-the-seasons-w-relegation",
+    "href": "antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#cash-dispersion-throughout-the-seasons-w-relegation",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Cash Dispersion Throughout The Seasons w/ Relegation",
+    "text": "Cash Dispersion Throughout The Seasons w/ Relegation"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  }
+]
