@@ -4,7 +4,11 @@ title: "NCAA Notes Section"
 
 Based on the NCAA, the most recent college football eras can be broken into the **BCS Championship Era** which lasted from: **1998-2014** and the **College Football Playoff Era** which started in **2014** directly after the **BCS Championship Era** until now. I found the website *CollegeFootballData.com* which provides structured historical college football data and even allows you to pull data via an api key **For Free**. I also identified *SportsData.io* , which seems to be official however, there is a paywall associated with it. *In terms of validity, could we utilize the **CollegeFootballData** source?* I was able to pull individual player statistics from 2014-2025 which consists of 60 parameters, there are also several other data categories that provide information about: **Betting, Coaching, Conferences, Draft, Drives (Play-by-Play), Games, Players, Plays, Rankings, Ratings, Recruiting, Stats, and Teams).** There is also an r package designed to help webscrape this information called **cfbfastR.**
 
-I have attached the downloads to the full player file here:
+I have attached the downloads to the full player stats file here:
+
+-   [Download Player Stats 2014-2025](files/cf_player_stats.xlsx)
+
+-   [Download List of NIL Collectives](files/NIL_Collectives_by_School.xlsx)
 
 I started by looking at the the positions over time to see if there was any change in position type. In terms of linemen, I believe it would be more ideal to only differentiate between offensive and defensive linemen. Offensive Linemen, Offensive Tackles, and Centers in theory should all be interchangeable just as Nose Tackles, Defensive Tackles, Defensive Ends/Edges but wanted to know what you thought?
 
