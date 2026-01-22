@@ -8,7 +8,10 @@ website:
     left:
       - href: index.qmd
         text: Home
-      - about.qmd
+      - href: NCAA_Notes.qmd
+        text: Current Working Space
+      - href: about.qmd
+        text: About 
 
 format:
   html:
