@@ -6,9 +6,9 @@ Based on the NCAA, the most recent college football eras can be broken into the 
 
 I have attached the downloads to the full player stats file here:
 
--   [Download Player Stats 2014-2025](files/cf_player_stats.xlsx)
+-   [Download Player Stats 2014-2025](Data Files/cf_player_stats.xlsx)
 
--   [Download List of NIL Collectives](files/NIL_Collectives_by_School.xlsx)
+-   [Download List of NIL Collectives](Data Files/NIL_Collectives_by_School)
 
 I started by looking at the the positions over time to see if there was any change in position type. In terms of linemen, I believe it would be more ideal to only differentiate between offensive and defensive linemen. Offensive Linemen, Offensive Tackles, and Centers in theory should all be interchangeable just as Nose Tackles, Defensive Tackles, Defensive Ends/Edges but wanted to know what you thought?
 
