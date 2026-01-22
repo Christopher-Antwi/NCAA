@@ -117,5 +117,131 @@
     "title": "NCAA Research",
     "section": "",
     "text": "What are the downstream effects the NCAA Profit Sharing Scheme/NIL Capabilities on youth sports? (College Basketball to Grassroots Basketball ( High School, AAU, Travel, Rec League, etc).\nWhat are the effects of the new NCAA pay-for-play model on team quality dispersion and overall competition?\nDoes the introduction of the NCAA Profit Sharing Scheme in college basketball increase ability stratification and reduce competitive parity?\nHow does the NCAA Profit Sharing Scheme affect talent allocation and competitive balance in the NCAA?\nHow does guaranteed compensation effect individual and overall team performance?\nHow does NIL compensation effect superstar concentration and create winner take most dynamics in College Basketball labor Market?\nHow does the allowance of college basketball players recieving market wages effect the institutional structure of the NCAA, Does it turn the NCAA into a Competitive Labor Market instead of a Monopolistic Labor Market?\nHow does the introduction of a “True Competitive Labor Market” effect talent sorting, productivity and equity or parity across leagues/programs?\nhttps://home.uchicago.edu/~vlima/courses/econ201/Superstars.pdf\nhttps://nil-ncaa.com/"
+  },
+  {
+    "objectID": "Markdown Files/NCAA_Notes.html",
+    "href": "Markdown Files/NCAA_Notes.html",
+    "title": "NCAA Notes Section",
+    "section": "",
+    "text": "Based on the NCAA, the most recent college football eras can be broken into the BCS Championship Era which lasted from: 1998-2014 and the College Football Playoff Era which started in 2014 directly after the BCS Championship Era until now. I found the website CollegeFootballData.com which provides structured historical college football data and even allows you to pull data via an api key For Free. I also identified SportsData.io , which seems to be official however, there is a paywall associated with it. In terms of validity, could we utilize the CollegeFootballData source? I was able to pull individual player statistics from 2014-2025 which consists of 60 parameters, there are also several other data categories that provide information about: Betting, Coaching, Conferences, Draft, Drives (Play-by-Play), Games, Players, Plays, Rankings, Ratings, Recruiting, Stats, and Teams). There is also an r package designed to help webscrape this information called cfbfastR.\nI have attached the downloads to the full player file here:\nI started by looking at the the positions over time to see if there was any change in position type. In terms of linemen, I believe it would be more ideal to only differentiate between offensive and defensive linemen. Offensive Linemen, Offensive Tackles, and Centers in theory should all be interchangeable just as Nose Tackles, Defensive Tackles, Defensive Ends/Edges but wanted to know what you thought?\nIf this a good enough data source, I will conduct a full analysis of the data as well as pull more data since there is a lot more that can be pulled. I will also provide you with my code files.\n\n\n\nOffensive Positions Over Time\n\n\n\n\n\nDefensive Positions Over Time\n\n\n\n\n\nSpecial Teams and Miscellanuous Positions Over Time\n\n\n\nLinks\nhttps://www.ncaa.com/news/ncaa/article/2025-08-19/college-football-history-notable-firsts-and-milestones\nhttps://collegefootballdata.com/\nhttps://sportsdata.io/scores-and-stats\nhttps://cfbfastr.sportsdataverse.org/reference/espn_cfb_pbp.html"
+  },
+  {
+    "objectID": "Markdown Files/index.html",
+    "href": "Markdown Files/index.html",
+    "title": "NCAA Research",
+    "section": "",
+    "text": "TBD\n\n\n\nTo identify the near and long-term effects of the NCAA’s new profit sharing scheme\nDevelop an understanding of how the profit sharing scheme effects of “Competition” in College Basketball\n\n\n\n\nAdopted in July 2025, the NCAA adopted it’s new profit sharing scheme in response to all the issues stemming from the confusion created about player compensation associated with their Name, Image, or Likeness (NIL). In this new profit sharing scheme, it allows institutions to invest up to 20.5 Million into their athletes in the form of direct compensation for their play. Although the athletes are being compensated directly, they are still not considered “employees”. For example, when evaluating the financials associated on a team basis, they use the language “Team Roster Costs” vs “Team Payroll or Salary”. Men’s College Basketball has the highest per player average due to the size of their rosters and I believe evaluating the profit sharing scheme from the perspective of College Basketball will provide us with unique insight. Men’s College basketball has seemingly been a de-regulated league as they have allowed professionals and semi-professionals from lower leauges to participate.\n\n\n\nRevenue Sharing: Under the NCAA revenue sharing model, schools can elect to make payments directly to athletes up to $ 20.5 million per year. If a school also commits to increased scholarships than the amount of revenue sharing is reduced dollar for dollar up to $ 2.5 million. The annual cap will increase to around $ 32 million over the next ten years.  We estimate that NCAA I schools will make revenue sharing payments to athletes of around $ 1.8 billion during the 2025-26 fiscal year. The following table summarizes the average annual operating revenue and revenue sharing estimates per School:\nCommercial NIL: In addition to school revenue sharing payments, student athletes can continue to receive third-party NIL income for product endorsements, services and other compensation for use of their name, image and likeness. All third-party NIL contracts over $ 600 must be submitted to the College Sports Commission for approval. The estimate for 2025-26 Commercial NIL comes from the Opendorse NIL at Four report.\nNIL Collectives: With the advent of Revenue Sharing, the influence of collectives at most schools has greatly diminished.  NIL collectives are also considered third-party entities and contracts exceeding $ 600 must be submitted to the College Sports Commission for approval.  The estimate for 2025-26 NIL Collectives also comes from the Opendorse NIL at Four report.\nAn NIL clearinghouse (“NIL Go”) has also been created to assess the validity of all third-party NIL deals exceeding $ 600. Deloitte will be managing NIL Go and has reportedly shared data with athletic directors and coaches showing that 70% of past payments from NIL / booster collectives would have been denied, while conversely, over 90% of payments from public companies would have been approved . (Patrick O’Rourke, CPA Washington, DC)\n\n\n\nNIL Collectives by Conference\n\n\n\n\n\nWhat are the downstream effects the NCAA Profit Sharing Scheme/NIL Capabilities on youth sports? (College Basketball to Grassroots Basketball ( High School, AAU, Travel, Rec League, etc).\nWhat are the effects of the new NCAA pay-for-play model on team quality dispersion and overall competition?\nDoes the introduction of the NCAA Profit Sharing Scheme in college basketball increase ability stratification and reduce competitive parity?\nHow does the NCAA Profit Sharing Scheme affect talent allocation and competitive balance in the NCAA?\nHow does guaranteed compensation effect individual and overall team performance?\nHow does NIL compensation effect superstar concentration and create winner take most dynamics in College Basketball labor Market?\nHow does the allowance of college basketball players recieving market wages effect the institutional structure of the NCAA, Does it turn the NCAA into a Competitive Labor Market instead of a Monopolistic Labor Market?\nHow does the introduction of a “True Competitive Labor Market” effect talent sorting, productivity and equity or parity across leagues/programs?\nhttps://home.uchicago.edu/~vlima/courses/econ201/Superstars.pdf\nhttps://nil-ncaa.com/"
+  },
+  {
+    "objectID": "Markdown Files/index.html#objectives",
+    "href": "Markdown Files/index.html#objectives",
+    "title": "NCAA Research",
+    "section": "",
+    "text": "To identify the near and long-term effects of the NCAA’s new profit sharing scheme\nDevelop an understanding of how the profit sharing scheme effects of “Competition” in College Basketball"
+  },
+  {
+    "objectID": "Markdown Files/index.html#overview",
+    "href": "Markdown Files/index.html#overview",
+    "title": "NCAA Research",
+    "section": "",
+    "text": "Adopted in July 2025, the NCAA adopted it’s new profit sharing scheme in response to all the issues stemming from the confusion created about player compensation associated with their Name, Image, or Likeness (NIL). In this new profit sharing scheme, it allows institutions to invest up to 20.5 Million into their athletes in the form of direct compensation for their play. Although the athletes are being compensated directly, they are still not considered “employees”. For example, when evaluating the financials associated on a team basis, they use the language “Team Roster Costs” vs “Team Payroll or Salary”. Men’s College Basketball has the highest per player average due to the size of their rosters and I believe evaluating the profit sharing scheme from the perspective of College Basketball will provide us with unique insight. Men’s College basketball has seemingly been a de-regulated league as they have allowed professionals and semi-professionals from lower leauges to participate."
+  },
+  {
+    "objectID": "Markdown Files/index.html#key-factors",
+    "href": "Markdown Files/index.html#key-factors",
+    "title": "NCAA Research",
+    "section": "",
+    "text": "Revenue Sharing: Under the NCAA revenue sharing model, schools can elect to make payments directly to athletes up to $ 20.5 million per year. If a school also commits to increased scholarships than the amount of revenue sharing is reduced dollar for dollar up to $ 2.5 million. The annual cap will increase to around $ 32 million over the next ten years.  We estimate that NCAA I schools will make revenue sharing payments to athletes of around $ 1.8 billion during the 2025-26 fiscal year. The following table summarizes the average annual operating revenue and revenue sharing estimates per School:\nCommercial NIL: In addition to school revenue sharing payments, student athletes can continue to receive third-party NIL income for product endorsements, services and other compensation for use of their name, image and likeness. All third-party NIL contracts over $ 600 must be submitted to the College Sports Commission for approval. The estimate for 2025-26 Commercial NIL comes from the Opendorse NIL at Four report.\nNIL Collectives: With the advent of Revenue Sharing, the influence of collectives at most schools has greatly diminished.  NIL collectives are also considered third-party entities and contracts exceeding $ 600 must be submitted to the College Sports Commission for approval.  The estimate for 2025-26 NIL Collectives also comes from the Opendorse NIL at Four report.\nAn NIL clearinghouse (“NIL Go”) has also been created to assess the validity of all third-party NIL deals exceeding $ 600. Deloitte will be managing NIL Go and has reportedly shared data with athletic directors and coaches showing that 70% of past payments from NIL / booster collectives would have been denied, while conversely, over 90% of payments from public companies would have been approved . (Patrick O’Rourke, CPA Washington, DC)\n\n\n\nNIL Collectives by Conference"
+  },
+  {
+    "objectID": "Markdown Files/index.html#proposed-questions",
+    "href": "Markdown Files/index.html#proposed-questions",
+    "title": "NCAA Research",
+    "section": "",
+    "text": "What are the downstream effects the NCAA Profit Sharing Scheme/NIL Capabilities on youth sports? (College Basketball to Grassroots Basketball ( High School, AAU, Travel, Rec League, etc).\nWhat are the effects of the new NCAA pay-for-play model on team quality dispersion and overall competition?\nDoes the introduction of the NCAA Profit Sharing Scheme in college basketball increase ability stratification and reduce competitive parity?\nHow does the NCAA Profit Sharing Scheme affect talent allocation and competitive balance in the NCAA?\nHow does guaranteed compensation effect individual and overall team performance?\nHow does NIL compensation effect superstar concentration and create winner take most dynamics in College Basketball labor Market?\nHow does the allowance of college basketball players recieving market wages effect the institutional structure of the NCAA, Does it turn the NCAA into a Competitive Labor Market instead of a Monopolistic Labor Market?\nHow does the introduction of a “True Competitive Labor Market” effect talent sorting, productivity and equity or parity across leagues/programs?\nhttps://home.uchicago.edu/~vlima/courses/econ201/Superstars.pdf\nhttps://nil-ncaa.com/"
+  },
+  {
+    "objectID": "Markdown Files/about.html",
+    "href": "Markdown Files/about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site\n\n1 + 1\n\n[1] 2"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "",
+    "text": "Adopted in July 2025, the NCAA adopted it’s new profit sharing scheme in response to all the issues stemming from the confusion created about player compensation associated with their Name, Image, or Likeness (NIL). In this new profit sharing scheme, it allows institutions to invest up to 20.5 Million into their athletes in the form of direct compensation for their play. Under this new profit sharing scheme, I have taken a look at the way college basketball programs/institutions might behave if a promotion/relegation scheme were to be introduced into the world of college basketball and to further investigate the total effects of this presumed increase in competition. I DON’T THINK THIS IS WHAT YOU’VE DONE… NOT YET, ANYWAY. YOU’D NEED TO INCLUDE OPTIMIZING AGENTS TO HAVE BEHAVIOURAL IMPLICATIONS. RIGHT NOW YOU ARE MODELING THE DYNAMICS WITH AND WITHOUT PROMOTION/REGEGATION, AREN’T YOU? BUT NOT WITH PROFIT SHARING OR OPTIMIZING? With just over 360 Schools in division 1 basketball, there are a total of 31 Conferences that could be included into this new European soccer style league. “THIS” IS CONFUSING, AS YOU’VE NOT SAID ANYTHING ABOUT THIS YET. In this new promotion/relegation scheme, for teams in Tiers 1&2, the bottom 2 teams that finish with the worst records in that conference will be relegated to a conference in the tier directly below it’s current at the end of each season.For Tiers 2&3, the top 2 teams in each conference will be promoted to the tier directly above.This new profit sharing scheme also removes the ban on the number of full athletic scholarships universities are permitted to provide which I hope to investigate in the future. &lt; \nAT THIS POINT IT’S NOT CLEAR TO READERS WHAT THS IS ABOUT. PROFIT SHARING? PROMOTION/REGEGATION?\nThis/IT is important to study competition in this setting to learn more about how competitive outcomes may emerge over time under different settings. Real-world leagues and organizations can evolve through repeated interactions and constraints that would be impossible to discern from simple observations. Essentially, I am searching how do the policy changes and resource shortages shape long-run competitive balance? \nIn this analysis, I will first take a look at \\(E[Competition_i|Relegation_i]\\) by evaluating how ability changes over time. IS IT ABILITY THAT’S OF PRIMARY INTEREST? NOT COMPETITIVENESS?"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-w-no-relegation-wins-over-time",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-w-no-relegation-wins-over-time",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "100 Season Run w/ No Relegation: Wins Over Time",
+    "text": "100 Season Run w/ No Relegation: Wins Over Time"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-with-relegation-wins-over-time",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-with-relegation-wins-over-time",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "100 Season Run WITH Relegation: Wins Over Time",
+    "text": "100 Season Run WITH Relegation: Wins Over Time\nNOT CLEAR WHAT’S GOING ON… SET ALPHA=.5? INTERPRET COLOR FOR THE READER, SO THEY CAN FOLLOW? INTERPRET MOVEMENTS? SUMMARIZE MOVEMENTS?"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-w-no-relegation-ability-over-time",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#season-run-w-no-relegation-ability-over-time",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "100 Season Run w/ NO Relegation: Ability Over Time",
+    "text": "100 Season Run w/ NO Relegation: Ability Over Time"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-1-ability-variance",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-1-ability-variance",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier 1 Ability Variance",
+    "text": "Tier 1 Ability Variance"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-2-ability-variance",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-2-ability-variance",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier 2 Ability Variance",
+    "text": "Tier 2 Ability Variance"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-3-ability-variance",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-3-ability-variance",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier 3 Ability Variance",
+    "text": "Tier 3 Ability Variance"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-movement-w-no-relegation",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-movement-w-no-relegation",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier Movement w/ No Relegation",
+    "text": "Tier Movement w/ No Relegation"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-movement-w-relegation",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#tier-movement-w-relegation",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Tier Movement w/ Relegation",
+    "text": "Tier Movement w/ Relegation"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#cash-simulation-run",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#cash-simulation-run",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Cash Simulation Run",
+    "text": "Cash Simulation Run"
+  },
+  {
+    "objectID": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#cash-dispersion-throughout-the-seasons-w-relegation",
+    "href": "Archive/antwichris_LATE_186805_23233399_NCAA Relegation Model Simulation GRW.html#cash-dispersion-throughout-the-seasons-w-relegation",
+    "title": "NCAA Relegation Model Simulation",
+    "section": "Cash Dispersion Throughout The Seasons w/ Relegation",
+    "text": "Cash Dispersion Throughout The Seasons w/ Relegation"
   }
 ]

@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.25">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Christopher Antwi">
+<meta name="dcterms.date" content="2026-01-22">
+
+<title>NCAA Relegation Model Simulation – NCAA Research</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-7b89279ff1a6dce999919e0e67d4d9ec.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-e31584831b205ffbb2d98406f31c2a5b.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container mx-auto">
+    <a href="../index.html" class="navbar-brand navbar-brand-logo">
+    </a>
+    <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title">NCAA Research</span>
+    </a>
+  </div>
+            <div id="quarto-search" class="" title="Search"></div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" role="menu" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../index.qmd"> 
+<span class="menu-text">Home</span></a>
+  </li>  
+  <li class="nav-item">
+    <span class="nav-link">
+<span class="menu-text">about.qmd</span>
+    </span>
+  </li>  
+</ul>
+          </div> <!-- /navcollapse -->
+            <div class="quarto-navbar-tools">
+</div>
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#ncaa-profit-sharing-scheme" id="toc-ncaa-profit-sharing-scheme" class="nav-link active" data-scroll-target="#ncaa-profit-sharing-scheme">NCAA Profit-Sharing Scheme</a></li>
+  <li><a href="#data-simulation" id="toc-data-simulation" class="nav-link" data-scroll-target="#data-simulation">Data/ Simulation</a></li>
+  <li><a href="#parameters" id="toc-parameters" class="nav-link" data-scroll-target="#parameters">Parameters</a></li>
+  <li><a href="#methodology" id="toc-methodology" class="nav-link" data-scroll-target="#methodology">Methodology</a></li>
+  <li><a href="#simulation-results" id="toc-simulation-results" class="nav-link" data-scroll-target="#simulation-results">Simulation Results</a>
+  <ul class="collapse">
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"></a></li>
+  <li><a href="#season-run-w-no-relegation-wins-over-time" id="toc-season-run-w-no-relegation-wins-over-time" class="nav-link" data-scroll-target="#season-run-w-no-relegation-wins-over-time">100 Season Run w/ No Relegation: Wins Over Time</a></li>
+  <li><a href="#season-run-with-relegation-wins-over-time" id="toc-season-run-with-relegation-wins-over-time" class="nav-link" data-scroll-target="#season-run-with-relegation-wins-over-time">100 Season Run WITH Relegation: Wins Over Time</a></li>
+  <li><a href="#season-run-w-no-relegation-ability-over-time" id="toc-season-run-w-no-relegation-ability-over-time" class="nav-link" data-scroll-target="#season-run-w-no-relegation-ability-over-time">100 Season Run w/ NO Relegation: Ability Over Time</a></li>
+  <li><a href="#tier-1-ability-variance" id="toc-tier-1-ability-variance" class="nav-link" data-scroll-target="#tier-1-ability-variance">Tier 1 Ability Variance</a></li>
+  <li><a href="#tier-2-ability-variance" id="toc-tier-2-ability-variance" class="nav-link" data-scroll-target="#tier-2-ability-variance">Tier 2 Ability Variance</a></li>
+  <li><a href="#tier-3-ability-variance" id="toc-tier-3-ability-variance" class="nav-link" data-scroll-target="#tier-3-ability-variance">Tier 3 Ability Variance</a></li>
+  <li><a href="#tier-movement-w-no-relegation" id="toc-tier-movement-w-no-relegation" class="nav-link" data-scroll-target="#tier-movement-w-no-relegation">Tier Movement w/ No Relegation</a></li>
+  <li><a href="#tier-movement-w-relegation" id="toc-tier-movement-w-relegation" class="nav-link" data-scroll-target="#tier-movement-w-relegation">Tier Movement w/ Relegation</a></li>
+  <li><a href="#cash-simulation-run" id="toc-cash-simulation-run" class="nav-link" data-scroll-target="#cash-simulation-run">Cash Simulation Run</a></li>
+  <li><a href="#cash-dispersion-throughout-the-seasons-w-relegation" id="toc-cash-dispersion-throughout-the-seasons-w-relegation" class="nav-link" data-scroll-target="#cash-dispersion-throughout-the-seasons-w-relegation">Cash Dispersion Throughout The Seasons w/ Relegation</a></li>
+  </ul></li>
+  <li><a href="#conclusion" id="toc-conclusion" class="nav-link" data-scroll-target="#conclusion">Conclusion</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">NCAA Relegation Model Simulation</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Christopher Antwi </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 22, 2026</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="ncaa-profit-sharing-scheme" class="level1">
+<h1>NCAA Profit-Sharing Scheme</h1>
+<p>Adopted in July 2025, the NCAA adopted it’s new profit sharing scheme in response to all the issues stemming from the confusion created about player compensation associated with their Name, Image, or Likeness (NIL). In this new profit sharing scheme, it allows institutions to invest up to 20.5 Million into their athletes in the form of direct compensation for their play. Under this new profit sharing scheme, I have taken a look at the way college basketball programs/institutions might behave if a promotion/relegation scheme were to be introduced into the world of college basketball and to further investigate the total effects of this presumed increase in competition. I DON’T THINK THIS IS WHAT YOU’VE DONE… NOT YET, ANYWAY. YOU’D NEED TO INCLUDE OPTIMIZING AGENTS TO HAVE BEHAVIOURAL IMPLICATIONS. RIGHT NOW YOU ARE MODELING THE DYNAMICS WITH AND WITHOUT PROMOTION/REGEGATION, AREN’T YOU? BUT NOT WITH PROFIT SHARING OR OPTIMIZING? With just over 360 Schools in division 1 basketball, there are a total of 31 Conferences that could be included into this new European soccer style league. “THIS” IS CONFUSING, AS YOU’VE NOT SAID ANYTHING ABOUT THIS YET. In this new promotion/relegation scheme, for teams in Tiers 1&amp;2, the bottom 2 teams that finish with the worst records in that conference will be relegated to a conference in the tier directly below it’s current at the end of each season.For Tiers 2&amp;3, the top 2 teams in each conference will be promoted to the tier directly above.This new profit sharing scheme also removes the ban on the number of full athletic scholarships universities are permitted to provide which I hope to investigate in the future. &lt; <br></p>
+<p>AT THIS POINT IT’S NOT CLEAR TO READERS WHAT THS IS ABOUT. PROFIT SHARING? PROMOTION/REGEGATION?</p>
+<p>This/IT is important to study competition in this setting to learn more about how competitive outcomes may emerge over time under different settings. Real-world leagues and organizations can evolve through repeated interactions and constraints that would be impossible to discern from simple observations. <strong>Essentially, I am searching how do the policy changes and resource shortages shape long-run competitive balance?</strong> <br></p>
+<p>In this analysis, I will first take a look at <span class="math inline">\(E[Competition_i|Relegation_i]\)</span> by evaluating how ability changes over time. IS IT ABILITY THAT’S OF PRIMARY INTEREST? NOT COMPETITIVENESS?</p>
+</section>
+<section id="data-simulation" class="level1">
+<h1>Data/ Simulation</h1>
+<p>To conduct this analysis, I created a simulation model that represents a college basketball team’s performance dynamics based on their perceived ability. A team’s ability is modeled as a performance parameter WHY TWO CONCEPTS? ABILITY AND PERFORMANCE? ISN’T IT JUST ABILITY FROM WHICH PERFORMANCE IS DERIVED AS THE OUTCOMES OF GAMES? that should account for the competitive strength of that team in a given season. Initially, each team is randomly assigned a baseline ability value that is drawn from a distribution of values given the teams’ tier. DO TIERS HAVE DIFFERENT AVERAGE ABILITY INIITALLY? In the model, there are 3/THREE Tiers/tiers that represent: <strong>Power 4 or 5 Conference Strength, Mid Major Conference Strength, and “Smaller or Less Known” Conference Strength</strong>. After each season is complete, in the relegation model a teams/TEAM’S ability either improves/INCREASES or decreases when they are promoted or relegated based on the settings applied by model itself. WHAT DETERMINES THAT? ASSUMED? The ability updates or evolves over time as a function of the model in relation to: Random Shocks, Promotion/Relegation effect, Academics, Cash, and Population. WHICH ARE CHOCIES? IF NONE OF THEM ARE CHOICES, THEN A CLEANER MODEL WOUDL DROP THEM. So, the ability parameter is used to determine the likelihood of a team winning against another team with respect to that teams ability. This is what I used and will be using to help determine which advantages an institution may presently have to improve future performance or create a long term strategy.</p>
+<p>Here we are looking at two different models, <strong>The Original Simulation (Sim_with_Relegation)</strong> and <strong>Cash Simulation (Sim_with_Relegation_Cash)</strong>. The original simulation represents team performance dynamic without factoring in any financial effects and is strictly dealing with competition. IF I UNDERSTNAD THAT CORRECTLY, THIS SEEMS TO SET UP AN EXPERIMENT THAT WILL NOT VALADILY TEST THE EFFECT OF PROMOTION/RELEGATION… AREN’T “Academics, Cash, and Population” ALL CONFOUNDERS?</p>
+<p>First, I simulated the outcome of competition in each Tier/tier based on their ability which is calculated below. From my preliminary results over time (100 Seasons), with the introduction of the promotion/relegation scheme an extremely/THE MOST competitive “Super League” is formed at the top Tier 1, where as Tier 2 &amp;/and 3 sustained is parity and experienced more movement between the two leagues then between Tier 1 &amp; 2. NOT SURE I UNDERSTAND THAT. IS THIS A RESULT? I have begun to analyze the effect of the promotion/relegation scheme over time with hopes to develop strategies for institutions at all levels. I have selected these preliminary parameters in hopes to measure the effect of the new profit sharing scheme. GETTING CONFUSING AGAIN… IS THIS ABOTU ROMOTION/RELEGATION OR PROFIT SHARING? THIS SUGGESTS BOTH, BUT NOT IN A STRUCTURED WAY I have also implemented the relegation scheme into the sim and ran it for 8/eight seasons. WHY ONLY EIGHT? WHY NOT 100, FOR EXAMPLE?</p>
+</section>
+<section id="parameters" class="level1">
+<h1>Parameters</h1>
+<p>Ability = <span class="math inline">\(Tier_i + f(Cash_i)+g(Academics_i) + \varepsilon_i\)</span><br> Cash: <span class="math inline">\(h(Population_i, Academics_i)\)</span> <br> Academics: <span class="math display">\[A \in \{1,\dots, 5\}\]</span> <br></p>
+<p>Population Size:POP <br> where: Small <br> Medium <br> Large <br></p>
+</section>
+<section id="methodology" class="level1">
+<h1>Methodology</h1>
+<p>I developed a discrete-time simulation of the competition in which teams play 320 games over 100 seasons. The teams ABILITIES? are initialized DRAWN? randomly from a normally distributed/DISTRIBUTION, and game outcomes are determined based on relative ability which determines their likelihood. NOT CLEAR The ability evolves over time and the extended model THE EXTENDED MODEL?, is influenced by team clash balances that update based on performance-dependent revenues and costs. NOT SURE WHAT THAT INFORMS. Simulations are repeated across scenarios to evaluate how financial constraints WHAT ARE THE CONSTRAINTS? affect competitive balance, mobility, and persistence.</p>
+</section>
+<section id="simulation-results" class="level1">
+<h1>Simulation Results</h1>
+<section id="section" class="level3">
+<h3 class="anchored" data-anchor-id="section"></h3>
+</section>
+<section id="season-run-w-no-relegation-wins-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="season-run-w-no-relegation-wins-over-time">100 Season Run w/ No Relegation: Wins Over Time</h2>
+</section>
+<section id="season-run-with-relegation-wins-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="season-run-with-relegation-wins-over-time">100 Season Run WITH Relegation: Wins Over Time</h2>
+<p>NOT CLEAR WHAT’S GOING ON… SET ALPHA=.5? INTERPRET COLOR FOR THE READER, SO THEY CAN FOLLOW? INTERPRET MOVEMENTS? SUMMARIZE MOVEMENTS?</p>
+</section>
+<section id="season-run-w-no-relegation-ability-over-time" class="level2">
+<h2 class="anchored" data-anchor-id="season-run-w-no-relegation-ability-over-time">100 Season Run w/ NO Relegation: Ability Over Time</h2>
+</section>
+<section id="tier-1-ability-variance" class="level2">
+<h2 class="anchored" data-anchor-id="tier-1-ability-variance">Tier 1 Ability Variance</h2>
+</section>
+<section id="tier-2-ability-variance" class="level2">
+<h2 class="anchored" data-anchor-id="tier-2-ability-variance">Tier 2 Ability Variance</h2>
+</section>
+<section id="tier-3-ability-variance" class="level2">
+<h2 class="anchored" data-anchor-id="tier-3-ability-variance">Tier 3 Ability Variance</h2>
+</section>
+<section id="tier-movement-w-no-relegation" class="level2">
+<h2 class="anchored" data-anchor-id="tier-movement-w-no-relegation">Tier Movement w/ No Relegation</h2>
+</section>
+<section id="tier-movement-w-relegation" class="level2">
+<h2 class="anchored" data-anchor-id="tier-movement-w-relegation">Tier Movement w/ Relegation</h2>
+</section>
+<section id="cash-simulation-run" class="level2">
+<h2 class="anchored" data-anchor-id="cash-simulation-run">Cash Simulation Run</h2>
+</section>
+<section id="cash-dispersion-throughout-the-seasons-w-relegation" class="level2">
+<h2 class="anchored" data-anchor-id="cash-dispersion-throughout-the-seasons-w-relegation">Cash Dispersion Throughout The Seasons w/ Relegation</h2>
+</section>
+</section>
+<section id="conclusion" class="level1">
+<h1>Conclusion</h1>
+<p>In Conclusion, this is the beginning of my simulation framework that I plan to continue to build upon. I believe this framework is useful and we can gain real insights about how competitive outcomes change over time with respect to the different parameters added. In the base model, I was able to determine that in a setting where relegation takes place competition remains fairly comparable in Tiers 2 &amp; Tiers 3 where Tier 1 effectively becomes a super league. ANY THOUGHTS AS TO WHY? (YOU ASSUMED IT WHEN YOU HAD ABILITY RATCHET UP/DOWN. OVER SEASONS, I THINK TIER 1 HAS TO PULL AWAY ON AVERAGE.) I am still working through my initial findings of the model that has financial implications involved. I WOULDN’T SPEND ANY TIME ON THAT BEFORE BUILDING AN INFORMATIVE BASELINE MODEL WITH TESTABLE IMPLCIATIONS. I am really interested in this topic SO AM I, and I believe when I am able to devote more time and resources headway can be made. I was fortunate enough to have a conversation with Lauren Anderson from the Warsaw group in the business school and she was nice enough to direct me towards the AD Rob Mullens, as she stated he would be very interested in the outcome and may potentially be a good resource to interview or retrieve actual data. NOT LIKELY. I plan on reaching out to him after the break as I want to pick this back up then. IT’S MILES AWAY FROM BEING USEFUL TO ANYONE, AND YOU ONLY GET ONE SHOT. SO I WOULDN’T DO THAT YET. THE DATA YOU WOULD WANT IS WAY BIGGER THAN JUST WHAT OREGON CAN OFFER, SO THERE’S NOTHING OF MUCH VALUE THERE. AND THEY WON’T OFFER ANYTHING THAT’S NOT ALREADY AVAILABLE PUBLICALLY FOR HTE UNIVERSE OF PROGRAMS. I’M INTERESTED IN THIS STUFF… HAPPY TO RUN WITH IT A BIT WITH YOU IF YOU’D LIKE TO TALK IT OUT.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
