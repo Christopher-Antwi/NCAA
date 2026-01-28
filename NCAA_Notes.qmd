@@ -6,9 +6,9 @@ Based on the NCAA, the most recent college football eras can be broken into the 
 
 I have attached the downloads to the full player file here:
 
--   [Download Player Stats from 2014-2025](Data Files/cf_player_stats.xlsx)
+-   [Download Player Stats from 2014-2025](Data%20Files/cf_player_stats.xlsx)
 
--   [Download NIL Collective Data by School](Data Files/NIL_Collectives_by_School.xlsx)
+-   [Download NIL Collective Data by School](Data%20Files/NIL_Collectives_by_School.xlsx)
 
 I started by looking at the the positions over time to see if there was any change in position type. In terms of linemen, I believe it would be more ideal to only differentiate between offensive and defensive linemen. Offensive Linemen, Offensive Tackles, and Centers in theory should all be interchangeable just as Nose Tackles, Defensive Tackles, Defensive Ends/Edges but wanted to know what you thought?
 
@@ -19,6 +19,28 @@ If this a good enough data source, I will conduct a full analysis of the data as
 ![Defensive Positions Over Time](/Images/def_positions_over_time.png)
 
 ![Special Teams and Miscellaneous Positions Over Time](/Images/misc_positions_over_time.png)
+
+How might we evaluate linemen?
+
+The offensive line is a peculiar position, I would compare their role to Medicine in the sense that the only time you really care or raise any alarms is when they are not working as expected.
+
+Defensive Linemen statistics are a bit easier to evaluate as they record several other statistics while playing. Essentially, you are able to see and feel their direct impact and their level of play aslo depends on the linemens level of play.
+
+## Offensive Linemen Metrics
+
+![Avg Rushing Carries Plot](Images/avg_carries_plot.png)
+
+![Average Sacks Over Time](Images/avg_sacks_plot.png)
+
+![Avg Yards Per Carry Over Time](Images/ypc_plot.png)
+
+![Average Long Run](Images/breakout_run_plot.png)
+
+![Avg Passing Attempts Over Time](Images/passing_attempts_plot.png)
+
+![Defensive Touchdowns](Images/avg_dtd_plot.png)
+
+![Solo Tackles Over Time](Images/avg_solotkl_plot.png)
 
 ### Links
 
